@@ -1,4 +1,4 @@
-// backend/events.js
+// backend/events.js 
 import wixData from 'wix-data';
 import { getPlan } from 'wix-pricing-plans-backend';
 
