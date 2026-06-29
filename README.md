@@ -8,28 +8,6 @@ This was the very first time I had written code or designed database systems. I 
 The repository is kept as it ran in the final beta production - it's a baseline record of my logical thinking and problem-solving before I moved into formal cybersecurity training.
 
 
-System Directory Structure:
-
-
-├── 📁 backend/
-│   ├── 📄 events.js                # Automatically runs when someone pays or signs up
-│   ├── 📄 jobs.config              # Sets the timer for the database cleanup script
-│   ├── 📄 jobs.js                  # Cleans out old temporary tracking data
-│   ├── 📄 piCode.web.js            # Checks if a link belongs to an active subscriber
-│   └── 📄 referrerData.web.js      # Looks up who invited the logged-in user
-├── 📁 frontend/
-│   ├── 📄 ReferralLandingPage.js   # Analyse and grab incoming URL, popup displays based on security status
-│   ├── 📄 CustomSignupLightbox.js  # Grabs the referral code when someone types their email
-│   ├── 📄 CurrencyConverterPage.js # Converts prices to different currencies using a live API
-│   ├── 📄 ErrorLightbox.js         # A popup box that displays a clean error message
-│   ├── 📄 GrowYourVisionPage.js    # The user dashboard tracking referral points and ranks
-│   ├── 📄 LearnMorePage.js         # Lets users manually paste in a referral link safely
-│   ├── 📄 PiCodeLookup.js          # Connects temporary landing data to permanent profiles
-│   └── 📄 RankAndRewardsPage.js    # Displays different badges depending on user points
-└── 📄 LICENSE                      # Copyright notice to protect the code
-
-
-
 Functional Architecture & Module Breakdown:
 
 1. Backend Scripts (📁 backend/)
@@ -60,13 +38,16 @@ Functional Architecture & Module Breakdown:
 - ReferralAdminOverview.js: This was an internal admin page I built to track how the site was performing. It stops standard users from entering, calculates the overall conversion rates of signups, splits users into performance brackets, and updates an interactive sorting table.
 
 
-What I Learned About Security:
+What I Learned:
 
 Building this project was a huge learning experience. Now that I am studying formal cybersecurity, I can look back at my beta code and see wheat areas need improvements.
 
 - Frontend: I allowed frontend scripts to update the database directly using overrides (suppressAuth: true). I now know that malicious users can alter frontend code inside their browser console. In a professional system, all database updates must be moved to secure backend files where users cannot touch them.
+- 
 - Hide Detailed Errors: My code passed highly specific error messages back to the website screen (like "No MemberData record found"). While this made debugging easy for me, it tells an attacker exactly how my database is structured. It is much more secure to display a generic message like "An error occurred" to the public, while keeping the technical details hidden inside server logs.
+- 
 - Input Validation: My scripts checked text boxes using simple commands like .includes(). To prevent hackers from submitting malicious scripts or trying to inject code into forms, all inputs should be sanitized using strict pattern-matching masks (Regular Expressions) before the data touches a database.
+
 
 The system worked as intended through the beta, but after deliberation, decided that the site and concept wasn't aligning with the original core intention. The tracking, referral and gamified framework has since been removed from the live platform. The live version is now a straightforward, jargon-free civic literacy tool.
 
