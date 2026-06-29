@@ -43,9 +43,9 @@ What I Learned:
 Building this project was a huge learning experience. Now that I am studying formal cybersecurity, I can look back at my beta code and see wheat areas need improvements.
 
 - Frontend: I allowed frontend scripts to update the database directly using overrides (suppressAuth: true). I now know that malicious users can alter frontend code inside their browser console. In a professional system, all database updates must be moved to secure backend files where users cannot touch them.
-- 
+
 - Hide Detailed Errors: My code passed highly specific error messages back to the website screen (like "No MemberData record found"). While this made debugging easy for me, it tells an attacker exactly how my database is structured. It is much more secure to display a generic message like "An error occurred" to the public, while keeping the technical details hidden inside server logs.
-- 
+
 - Input Validation: My scripts checked text boxes using simple commands like .includes(). To prevent hackers from submitting malicious scripts or trying to inject code into forms, all inputs should be sanitized using strict pattern-matching masks (Regular Expressions) before the data touches a database.
 
 
