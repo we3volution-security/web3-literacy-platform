@@ -52,6 +52,3 @@ Building this project was a huge learning experience. Now that I am studying for
 The system worked as intended through the beta, but after deliberation, decided that the site and concept wasn't aligning with the original core intention. The tracking, referral and gamified framework has since been removed from the live platform. The live version is now a straightforward, jargon-free civic literacy tool.
 
 
-
-
-transitioned into a highly streamlined, jargon-free civic literacy engine.
