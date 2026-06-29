@@ -10,6 +10,7 @@ The repository is kept as it ran in the final beta production - it's a baseline 
 
 System Directory Structure:
 
+
 ├── 📁 backend/
 │   ├── 📄 events.js                # Automatically runs when someone pays or signs up
 │   ├── 📄 jobs.config              # Sets the timer for the database cleanup script
@@ -18,14 +19,15 @@ System Directory Structure:
 │   └── 📄 referrerData.web.js      # Looks up who invited the logged-in user
 ├── 📁 frontend/
 │   ├── 📄 ReferralLandingPage.js   # Analyse and grab incoming URL, popup displays based on security status
-│   ├── 📄 CustomSignupLightbox.js  # Grabs email and local memory URL in cms
+│   ├── 📄 CustomSignupLightbox.js  # Grabs the referral code when someone types their email
 │   ├── 📄 CurrencyConverterPage.js # Converts prices to different currencies using a live API
-│   ├── 📄 ErrorLightbox.js         # A popup box that displays a clean error message on landing page
+│   ├── 📄 ErrorLightbox.js         # A popup box that displays a clean error message
 │   ├── 📄 GrowYourVisionPage.js    # The user dashboard tracking referral points and ranks
 │   ├── 📄 LearnMorePage.js         # Lets users manually paste in a referral link safely
 │   ├── 📄 PiCodeLookup.js          # Connects temporary landing data to permanent profiles
 │   └── 📄 RankAndRewardsPage.js    # Displays different badges depending on user points
 └── 📄 LICENSE                      # Copyright notice to protect the code
+
 
 
 Functional Architecture & Module Breakdown:
